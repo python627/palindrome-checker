@@ -1,10 +1,17 @@
-document.getElementById('checkButton').addEventListener('click', function() {
-    const word = document.getElementById('wordInput').value;
-    const reversed = word.split('').reverse().join('');
+ function isPalindrome(word) {
+    // Convert the word to lowercase
+    const lowerCaseWord = word.toLowerCase();
     
-    if (word === reversed) {
-        document.getElementById('result').textContent = "It's a palindrome!";
-    } else {
-        document.getElementById('result').textContent = "Not a palindrome.";
-    }
-});
+    // Reverse the string and check if it matches the original
+    const reversed = lowerCaseWord.split('').reverse().join('');
+    
+    return lowerCaseWord === reversed;
+}
+
+// Example usage
+const inputWord = prompt("Enter a word:");
+if (isPalindrome(inputWord)) {
+    alert("It's a palindrome!");
+} else {
+    alert("Not a palindrome.");
+}
